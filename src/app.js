@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv'
 
 import userRouter from "./routes/user.routes.js"
 import courseRouter from "./routes/course.routes.js"
+import contentRouter from "./routes/content.routes.js"
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,8 @@ app.use('/api', (req,res, next) => {
 }); // Utiliza el prefijo '/api' para tus rutas
 
 app.use('/api/users', userRouter);
+app.use('/api/courses',courseRouter);
+app.use('/api/content', contentRouter)
 
 
 
